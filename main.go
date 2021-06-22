@@ -14,6 +14,7 @@ func main() {
 	models.ConnectDataBase()
 
 	r.GET("/books", controllers.FindBooks)
+	r.POST("/books", controllers.CreateBook)
 
 	r.GET("/", func(c *gin.Context) {
 		c.JSON(http.StatusOK, gin.H{"message": "hello world"})
